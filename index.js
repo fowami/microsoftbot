@@ -27,11 +27,9 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about how bots work.
 const adapter = new BotFrameworkAdapter({
-   // appId: process.env.MicrosoftAppId,
-   //appPassword: process.env.MicrosoftAppPassword
-   appId="e4ef07c2-0c04-4be7-b2d8-7bb7e12139e0",
-   appPassword="@#Fowami12345678?"
-    
+   appId: process.env.MicrosoftAppId,
+   appPassword: process.env.MicrosoftAppPassword 
+ 
 });
 
 // Catch-all for errors.
