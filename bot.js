@@ -37,6 +37,6 @@ class EchoBot extends ActivityHandler {
             await next();
         });
     }
-}
+} 
 
 module.exports.EchoBot = EchoBot;
