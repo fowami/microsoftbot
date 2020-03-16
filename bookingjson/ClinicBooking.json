@@ -1,0 +1,324 @@
+ {
+  "luis_schema_version": "4.0.0",
+  "versionId": "0.1",
+  "name": "ClinicBooking",
+  "desc": "Luis Model for a clinic booking bot sample",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "BookClinic"
+    },
+    {
+      "name": "Cancel"
+    },
+    {
+      "name": "GetWeather"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [],
+  "composites": [
+    {
+      "name": "From",
+      "children": [
+        "Time"
+      ],
+      "roles": []
+    },
+    {
+      "name": "To",
+      "children": [
+        "Time"
+      ],
+      "roles": []
+    }
+  ],
+  "closedLists": [
+    {
+      "name": "Time",
+      "subLists": [
+        {
+          "canonicalForm": "2PM",
+          "list": [
+            "2",
+            "paris"
+          ]
+        },
+        {
+          "canonicalForm": "3PM",
+          "list": [
+            "3"
+          ]
+        },
+        {
+          "canonicalForm": "4pm",
+          "list": [
+            "4",
+            "york",
+            "berlin"
+          ]
+        },
+        {
+          "canonicalForm": "5PM",
+          "list": [
+            "5"
+          ]
+        },
+        {
+          "canonicalForm": "6PM",
+          "list": [
+            "6"
+          ]
+        },
+        {
+          "canonicalForm": "10pm",
+          "list": [
+            "new"
+          ]
+        },
+        {
+          "canonicalForm": "11pm",
+          "list": []
+        },
+        {
+          "canonicalForm": "noon",
+          "list": []
+        },
+        {
+          "canonicalForm": "12noon",
+          "list": []
+        },
+        {
+          "canonicalForm": "1am",
+          "list": []
+        },
+        {
+          "canonicalForm": "thurs",
+          "list": []
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "book",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a clinic",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a clinic from 2pm",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 19,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "book a flight",
+      "intent": "BookClinic",
+      "entities": []
+    },
+    {
+      "text": "book a restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book clinic from 3pm on march 24th",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 17,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "book clinic from 5pm to 6pm",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 17,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "book clinic from 5pm to 6pm on april 15th",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 17,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "book me clinic from 3pm to 2pm",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 20,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "book me for a clinic any time afternoon",
+      "intent": "BookClinic",
+      "entities": []
+    },
+    {
+      "text": "book me from 3pm to 4pm on may 9th",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "booking clinic at 2pm",
+      "intent": "BookClinic",
+      "entities": []
+    },
+    {
+      "text": "booking from 2pm to 4pm",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "booking from 3pm to 5pm",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "bye",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel booking",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "clinic at 2pm",
+      "intent": "BookClinic",
+      "entities": []
+    },
+    {
+      "text": "clinic at 4pm",
+      "intent": "BookClinic",
+      "entities": []
+    },
+    {
+      "text": "clinic from 2pm to 4pm on april 11th",
+      "intent": "BookClinic",
+      "entities": [
+        {
+          "entity": "From",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "cool",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "exit",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "ignore",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "nothing",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "see a doctor",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the forecast for this friday?",
+      "intent": "GetWeather",
+      "entities": []
+    },
+    {
+      "text": "what's the weather like for tomorrow",
+      "intent": "GetWeather",
+      "entities": []
+    },
+    {
+      "text": "what's the weather like in new york",
+      "intent": "GetWeather",
+      "entities": []
+    },
+    {
+      "text": "what's the weather like?",
+      "intent": "GetWeather",
+      "entities": []
+    },
+    {
+      "text": "winter is coming",
+      "intent": "None",
+      "entities": []
+    }
+  ],
+  "settings": []
+}

@@ -1,0 +1,131 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "speak": "<s>Book only the available slots.</s><s>Thank you for your time.</s>",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "CLINIC BOOKING",
+                            "horizontalAlignment": "Center",
+                            "isSubtle": true,
+                            "wrap": true,
+                            "fontType": "Monospace",
+                            "weight": "Bolder",
+                            "size": "Medium"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Medium",
+            "separator": true,
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Booking Time",
+                            "isSubtle": true,
+                            "weight": "Bolder",
+                            "wrap": true,
+                            "fontType": "Monospace"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Available Range",
+                            "spacing": "Small"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "From",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder",
+                            "fontType": "Monospace"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "2PM",
+                            "color": "Good",
+                            "weight": "Bolder",
+                            "horizontalAlignment": "Center",
+                            "spacing": "Small"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "To",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Right",
+                            "weight": "Bolder",
+                            "fontType": "Monospace"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "6PM",
+                            "color": "Good",
+                            "horizontalAlignment": "Right",
+                            "weight": "Bolder",
+                            "spacing": "Small"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Medium",
+            "separator": true,
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Please note you can only book hourly eg 3PM to 4PM",
+                            "isSubtle": true,
+                            "fontType": "Monospace",
+                            "weight": "Bolder",
+                            "color": "Attention",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": " "
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
