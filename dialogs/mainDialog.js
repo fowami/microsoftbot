@@ -61,7 +61,7 @@ class MainDialog extends ComponentDialog {
             return await stepContext.next();
         }
 
-        const messageText = stepContext.options.restartMsg ? stepContext.options.restartMsg : 'How are you today?\nTo help you book a clinic write something like\n "Book a clinic from 3PM to 4PM on April 7, 2020"';
+        const messageText = stepContext.options.restartMsg ? stepContext.options.restartMsg : 'How are you today?\nTo help you book a clinic write something like\n "Book a clinic from 3PM to 4PM"';
         const promptMessage = MessageFactory.text(messageText, messageText, InputHints.ExpectingInput);
         return await stepContext.prompt('TextPrompt', { prompt: promptMessage });
     }
@@ -108,7 +108,7 @@ class MainDialog extends ComponentDialog {
 
         default: {
             // Catch all for unhandled intents
-            const didntUnderstandMessageText = `Sorry, I didn't get that. Please try asking in a different way (intent was ${ LuisRecognizer.topIntent(luisResult) })`;
+            const didntUnderstandMessageText = `Sorry, I didn't get that. Please try asking in a different way use example above`;
             await stepContext.context.sendActivity(didntUnderstandMessageText, didntUnderstandMessageText, InputHints.IgnoringInput);
         }
         }

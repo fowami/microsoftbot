@@ -29,7 +29,7 @@ class DateResolverDialog extends CancelAndHelpDialog {
         const promptMessageText = 'On what date would you like to be booked for a clinic?';
         const promptMessage = MessageFactory.text(promptMessageText, promptMessageText, InputHints.ExpectingInput);
 
-        const repromptMessageText = "For best results, please enter clinic date including the month, day and year.";
+        const repromptMessageText = "For better output, please enter clinic date including the month, day and year.";
         const repromptMessage = MessageFactory.text(repromptMessageText, repromptMessageText, InputHints.ExpectingInput);
 
         if (!timex) {
