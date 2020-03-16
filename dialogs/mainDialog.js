@@ -87,11 +87,11 @@ class MainDialog extends ComponentDialog {
             const toEntities = this.luisRecognizer.getToEntities(luisResult);
 
             // Show a warning if time can't be resolved.
-            await this.showWarningForUnsupportedCities(stepContext.context, fromEntities, toEntities);
+            await this.showWarningForUnsupportedTimes(stepContext.context, fromEntities, toEntities);
 
             // Initialize BookingDetails with any entities we may have found in the response.
-            bookingDetails.from = toEntities.ctime;
-            bookingDetails.to = fromEntities.ctime;
+            bookingDetails.fromWhatTime = toEntities.ctime;
+            bookingDetails.towhatTime = fromEntities.ctime;
             bookingDetails.clinicDate = this.luisRecognizer.getClinicDate(luisResult);
             console.log('LUIS extracted these booking details:', JSON.stringify(bookingDetails));
 
@@ -121,22 +121,21 @@ class MainDialog extends ComponentDialog {
      * In some cases LUIS will recognize the From and To composite entities as a valid times but the From and To Time values
      * will be empty if those entity values can't be mapped to a canonical item in time.
      */
-    async showWarningForUnsupportedCities(context, fromEntities, toEntities) {
-        const unsupportedCities = [];
-        if (fromEntities.from && !fromEntities.airport) {
-            unsupportedCities.push(fromEntities.from);
+    async showWarningForUnsupportedTimes(context, fromEntities, toEntities) {
+        const unsupportedTimes = [];
+        if (fromEntities.fromWhatTime && !fromEntities.ctime) {
+            unsupportedTimes.push(fromEntities.fromWhatTime);
         }
 
-        if (toEntities.to && !toEntities.airport) {
-            unsupportedCities.push(toEntities.to);
+        if (toEntities.towhatTime && !toEntities.ctime) {
+            unsupportedTimes.push(toEntities.towhatTime);
         }
-       /*
-        if (unsupportedCities.length) {
-            const messageText = `Sorry but the following clinic times are not available: ${ unsupportedCities.join(', ') }`;
+       
+        if (unsupportedTimes.length) {
+            const messageText = `Sorry but the following clinic times are not available: ${ unsupportedTimes.join(', ') }`;
             await context.sendActivity(messageText, messageText, InputHints.IgnoringInput);
         } 
-        Not accurate to revisit later
-        */
+       
     }
 
     /**
